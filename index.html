@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sylin Labs</title>
+  <style>
+    :root {
+      --blue: #2A5BE2;
+      --red: #E53935;
+      --yellow: #FBBC05;
+      --green: #34A853;
+      --text: #111;
+      --gray: #666;
+      --font-main: "Inter", sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: var(--font-main);
+      background: #fff;
+      color: var(--text);
+    }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; }
+    header img { width: 40px; }
+    nav button { margin-left: .5rem; background:none; border:none; color: var(--gray); cursor:pointer; font-size:1rem; }
+    nav button.active, nav button:hover { color: var(--blue); }
+    .content { flex: 1; }
+    .hero { text-align: center; padding: 4rem 2rem; }
+    .hero h1 { font-size: 3rem; margin-bottom: .5rem; }
+    .hero .slogan { font-size: 1.25rem; color: var(--gray); margin-bottom: 1.5rem; }
+    .hero .cta { display: inline-block; padding: .75rem 1.5rem; background: var(--blue); color: #fff; border-radius: 4px; text-decoration: none; }
+    .transition { text-align: center; }
+    .transition img { width: 100%; max-height: 300px; object-fit: cover; }
+    .intro { max-width: 800px; margin: 2rem auto; line-height: 1.6; font-size:1.1rem; padding: 0 1rem; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:2rem; padding:2rem; }
+    .feature { border:1px solid #eee; border-radius:8px; padding:1.5rem; text-align:center; }
+    .feature h3 { margin-bottom:.5rem; color: var(--blue);}    
+    footer { text-align:center; padding:2rem; color: var(--gray); font-size:.9rem; background: #f9f9f9; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="C:\Users\Lin\OneDrive\Workspace\Sylin Labs\StartUp\Homepage\Logo Sylin Labs.png" alt="Logo" />
+    <nav>
+      <button class="active" onclick="setLang('en')">En</button>
+      <button onclick="setLang('zh')">中</button>
+      <button onclick="setLang('de')">De</button>
+    </nav>
+  </header>
+  <div class="content">
+    <section class="hero">
+      <h1>Sylin Labs</h1>
+      <div class="slogan" id="slogan">Balanced Tech - Clear Thinking</div>
+      <a href="#intro" class="cta">Learn More</a>
+    </section>
+    <section class="transition">
+      <img src="C:\Users\Lin\OneDrive\Workspace\Sylin Labs\StartUp\Homepage\pexels-googledeepmind.jpg" alt="Tech Transition Image" />
+    </section>
+    <section class="intro" id="intro">
+      <p id="intro-text">We are a creative lab focused on AI and data tools. We explore the balance between technology and humanity — driven by clarity, infused with energy, optimism, and attention. A rational yet vibrant lab, where innovation comes alive.</p>
+    </section>
+    <section class="features">
+      <div class="feature">
+        <h3>AI Posture Assistant</h3>
+        <p>An intelligent extension that improves your posture using local AI.</p>
+      </div>
+      <div class="feature">
+        <h3>SaaS Risk Alerts</h3>
+        <p>Early-warning system for credit and bankruptcy risk.</p>
+      </div>
+      <div class="feature">
+        <h3>Energy Data API</h3>
+        <p>High-frequency power and hydrogen market data for analysis.</p>
+      </div>
+      <div class="feature">
+        <h3>Immersive Language Lab</h3>
+        <p>AI-driven Unreal Engine environment for language learning.</p>
+      </div>
+    </section>
+  </div>
+  <footer>
+    Contact us: <a href="mailto:info@sylinlabs.com">info@sylinlabs.com</a> | 
+    <a href="https://github.com/sylinlabs" target="_blank">GitHub</a> | 
+    <a href="https://twitter.com/sylinlabs" target="_blank">Twitter</a><br />
+    &copy; 2025 Sylin Labs. All rights reserved.
+  </footer>
+  <script>
+    const texts = {
+      en: { slogan: "Balanced Tech. Clear Thinking.", intro: `We are a creative lab focused on AI and data tools. We explore the balance between technology and humanity — driven by clarity, infused with energy, optimism, and attention. A rational yet vibrant lab, where innovation comes alive.` },
+      zh: { slogan: "平衡科技，清晰思维。", intro: `我们是一个专注AI与数据工具的创意实验室，探索科技与人性的平衡——以清晰为驱动，注入能量、乐观与关注。一个理性却充满活力的实验室，在这里创新焕发生命。` },
+      de: { slogan: "Ausgewogene Technologie. Klar denken.", intro: `Wir sind ein kreatives Labor für KI- und Daten-Tools. Wir erforschen das Gleichgewicht zwischen Technologie und Menschlichkeit – geprägt von Klarheit, voller Energie, Optimismus und Aufmerksamkeit. Ein rationales, aber lebendiges Labor, in dem Innovation zum Leben erwacht.` }
+    };
+    function setLang(lang) {
+      document.getElementById('slogan').textContent = texts[lang].slogan;
+      document.getElementById('intro-text').textContent = texts[lang].intro;
+    }
+  </script>
+</body>
+</html>
